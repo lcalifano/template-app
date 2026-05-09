@@ -60,7 +60,7 @@ resources:
     type: org.cloudfoundry.managed-service
     parameters:
       service: postgresql-db
-      service-plan: development
+      service-plan: trial
   - name: template-app-connectivity
     type: org.cloudfoundry.managed-service
     parameters:
