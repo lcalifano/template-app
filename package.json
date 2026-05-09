@@ -60,7 +60,10 @@
       "[production]": {
         "auth": "xsuaa",
         "db": {
-          "kind": "postgres"
+          "kind": "postgres",
+          "credentials": {
+            "schema": "template_app"
+          }
         }
       },
       "connectivity": true,

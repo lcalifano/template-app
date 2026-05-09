@@ -56,7 +56,7 @@ resources:
           credential-types:
             - "binding-secret"
             - "x509"
-  - name: template-app-postgres
+  - name: postgres
     type: org.cloudfoundry.managed-service
     parameters:
       service: postgresql-db
