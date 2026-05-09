@@ -39,7 +39,9 @@
       "[dev]": {
         "db": {
           "kind": "sqlite",
-          "credentials": { "url": "db.sqlite" }
+          "credentials": {
+            "url": "db.sqlite"
+          }
         },
         "auth": {
           "kind": "basic",
@@ -47,7 +49,8 @@
             "alice": {
               "password": "alice",
               "roles": [
-                "Admin"
+                "Admin",
+                "authenticated-user"
               ],
               "attr": {}
             }
