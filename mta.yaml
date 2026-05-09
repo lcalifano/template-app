@@ -25,7 +25,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: template-app-auth
-      - name: template-app-postgres
+      - name: postgres
       - name: template-app-connectivity
       - name: template-app-destination
 
@@ -40,7 +40,7 @@ modules:
         - name: deploy-to-postgresql
           command: npm start
     requires:
-      - name: template-app-postgres
+      - name: postgres
 
 resources:
   - name: template-app-auth
