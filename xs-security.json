@@ -1,6 +1,21 @@
 {
-  "scopes": [],
-  "attributes": [],
-  "role-templates": [],
-  "authorities-inheritance": false
+  "xsappname": "template-app-auth",
+  "tenant-mode": "dedicated",
+  "description": "Security config for template-app",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Scope Admin."
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "RT_Admin",
+      "description": "Role template Admin",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ],
+  "attributes": []
 }

@@ -50,7 +50,7 @@ resources:
       service-plan: application
       path: ./xs-security.json
       config:
-        xsappname: template-app-${org}-${space}
+        xsappname: template-app-auth
         tenant-mode: dedicated
         oauth2-configuration:
           credential-types:

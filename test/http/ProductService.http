@@ -1,0 +1,56 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Product
+# @name Product_GET
+GET {{server}}/odata/v4/api/Product
+Authorization: Basic {{username}}:{{password}}
+
+
+### Product
+# @name Product_POST
+POST {{server}}/odata/v4/api/Product
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "32041000-ea31-4bd0-aef5-11a70aadadaa",
+  "name": "name-3204100",
+  "description": "description-3204100",
+  "price": 44158833.58,
+  "stock": 22,
+  "active": true,
+  "createdAt": "2011-01-21T00:00:00.000Z",
+  "createdBy": "createdBy.1woas@example.net",
+  "modifiedAt": "2019-09-24T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.1woas@example.org"
+}
+
+
+### Product
+# @name Product_PATCH
+PATCH {{server}}/odata/v4/api/Product/32041000-ea31-4bd0-aef5-11a70aadadaa
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "32041000-ea31-4bd0-aef5-11a70aadadaa",
+  "name": "name-3204100",
+  "description": "description-3204100",
+  "price": 44158833.58,
+  "stock": 22,
+  "active": true,
+  "createdAt": "2011-01-21T00:00:00.000Z",
+  "createdBy": "createdBy.1woas@example.net",
+  "modifiedAt": "2019-09-24T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.1woas@example.org"
+}
+
+
+### Product
+# @name Product_DELETE
+DELETE {{server}}/odata/v4/api/Product/32041000-ea31-4bd0-aef5-11a70aadadaa
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

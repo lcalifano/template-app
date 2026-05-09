@@ -4,20 +4,61 @@
   "dependencies": {
     "@cap-js/postgres": "^2",
     "@sap/cds": "^9",
-    "@sap/xssec": "^4"
+    "@sap/xssec": "^4",
+    "express": "^5.2.1"
   },
   "devDependencies": {
+    "@cap-js/cds-test": ">=0.4.1",
     "@cap-js/sqlite": "^2",
     "@sap/cds-dk": "^9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "test": "node --test"
   },
   "private": true,
   "cds": {
+    "server": {
+      "body_parser": {
+        "limit": "10mb"
+      }
+    },
+    "log": {
+      "format": "json",
+      "user": true,
+      "levels": {
+        "sqlite": "error",
+        "remote": "error",
+        "odata": "error",
+        "sap-cloud-sdk-logger": "error",
+        "template-app-log": "info",
+        "cov2ap/hpm": "warn"
+      }
+    },
     "requires": {
+      "[dev]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": { "url": "db.sqlite" }
+        },
+        "auth": {
+          "kind": "basic",
+          "users": {
+            "alice": {
+              "password": "alice",
+              "roles": [
+                "Admin"
+              ],
+              "attr": {}
+            }
+          }
+        }
+      },
       "[production]": {
-        "auth": "xsuaa"
+        "auth": "xsuaa",
+        "db": {
+          "kind": "postgres"
+        }
       },
       "connectivity": true,
       "destinations": true
