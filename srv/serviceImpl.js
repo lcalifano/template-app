@@ -14,7 +14,15 @@ const afterReadProduct = (Product)=>{
     }
 }
 
+const eventImpl = () =>{
+    return async (msg) => {
+        const { ID, testo } = msg.data
+        console.log('someEvent received:', { ID, testo });
+    }
+}
+
 module.exports = {
     beforeProduct,
-    afterReadProduct
+    afterReadProduct,
+    eventImpl
 }
