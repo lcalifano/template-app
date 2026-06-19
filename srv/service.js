@@ -7,7 +7,7 @@ module.exports = class ProductService extends cds.ApplicationService {  async in
   const { Product } = this.entities;
 
   // per SAP Event Mesh stessa cosa ma collegandosi al servizio Event Mesh su SAP BTP (configurazione in package.json e default-env.json)
-  const eventService = await cds.connect.to('EventService'); 
+  const messaging = await cds.connect.to('messaging'); 
 
   //const service = await cds.connect.to('<NomeServizio>'); // per collegarsi ad un altro servizio CDS o esterno (configurazione in package.json e default-env.json)
   
@@ -26,7 +26,7 @@ module.exports = class ProductService extends cds.ApplicationService {  async in
 
   this.after(['READ'], Product, afterReadProduct(Product))
 
-  eventService.on('someEvent', eventImpl());
+  messaging.on('someEvent', eventImpl());
 
 
   return super.init()

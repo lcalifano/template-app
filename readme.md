@@ -25,17 +25,17 @@ Learn more at <https://cap.cloud.sap>.
 https://community.sap.com/t5/technology-blog-posts-by-sap/set-up-remote-debugging-to-diagnose-cap-applications-node-js-stack-at/ba-p/13515376
 
 cf login --sso
-cf ssh-enabled cap_template-app-srv
-    se non lo è -> cf enable-ssh cap_template-app-srv  
-cf restart cap_template-app-srv  
-cf ssh cap_template-app-srv  
+cf ssh-enabled template-app-srv
+    se non lo è -> cf enable-ssh template-app-srv  
+cf restart template-app-srv  
+cf ssh template-app-srv  
 
 viene aperta la shell del container linux e poi fare
 ps aux
 kill -usr1 253
 
 nel log dell'app ci sarà scritto debug listening to -> aprire nuovo terminale
-cf ssh -N -L 9229:127.0.0.1:9229 cap_template-app-srv
+cf ssh -N -L 9229:127.0.0.1:9229 template-app-srv
 
 configurazione del debugger da aggiungere per attaccarsi
 {

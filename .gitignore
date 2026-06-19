@@ -20,4 +20,4 @@ mta_archives/
 
 # env
 .env
-
+.env*

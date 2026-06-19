@@ -64,7 +64,10 @@
         }
       },
       "connectivity": true,
-      "destinations": true
+      "destinations": true,
+      "messaging": {
+        "kind": "file-based-messaging"
+      }
     }
   }
 }
