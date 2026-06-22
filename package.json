@@ -67,7 +67,8 @@
       "destinations": true,
       "messaging": {
         "kind": "file-based-messaging"
-      }
+      },
+      "application-logging": true
     }
   }
 }

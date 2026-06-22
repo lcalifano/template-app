@@ -28,6 +28,8 @@ modules:
       - name: postgres
       - name: template-app-connectivity
       - name: template-app-destination
+      # - name: template-app-logging
+      - name: logging-service
 
   - name: template-app-postgres-deployer
     type: nodejs
@@ -70,4 +72,10 @@ resources:
     type: org.cloudfoundry.managed-service
     parameters:
       service: destination
+      service-plan: lite
+  # - name: template-app-logging
+  - name: logging-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
       service-plan: lite
