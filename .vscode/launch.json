@@ -2,6 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Run cds-serve",
+      "runtimeExecutable": "cds-serve",
+      "cwd": "${workspaceFolder}",
+      "args": []
+    },
+    {
       "name": "Attach to a Cloud Foundry Instance on Port 9229",
       "port": 9229,
       "request": "attach",

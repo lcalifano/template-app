@@ -5,7 +5,10 @@
     "@cap-js/postgres": "^2",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/http-client": "^4",
+    "@sap-cloud-sdk/resilience": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-test": ">=0.4.1",
@@ -68,7 +71,14 @@
       "messaging": {
         "kind": "file-based-messaging"
       },
-      "application-logging": true
+      "application-logging": true,
+      "Northwind": {
+        "kind": "odata",
+        "model": "srv/external/Northwind",
+        "credentials": {
+          "destination": "NorthWind"
+        }
+      }
     }
   }
 }
